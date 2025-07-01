@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', sans-serif;
+  }
+
+  mat-form-field {
+    @apply mb-2 w-full;
+  }
+
+  mat-error,
+  mat-hint {
+    @apply text-xs;
+  }
+
+  mat-paginator {
+    @apply border-t border-black/10 pb-4 text-xs md:pb-0;
+  }
+
+  table,
+  .mat-step-text-label {
+    @apply text-sm;
+  }
+
+  th {
+    @apply font-medium;
+  }
+
+  .btn {
+    @apply flex h-14 items-center justify-center whitespace-nowrap rounded px-6 text-base font-medium duration-300 hover:opacity-95 active:scale-95 disabled:opacity-40 hover:disabled:opacity-40;
+  }
+
+  .btn-md {
+    @apply flex h-11 items-center justify-center whitespace-nowrap rounded px-4 text-sm font-medium duration-300 hover:opacity-95 active:scale-95 disabled:opacity-40 hover:disabled:opacity-40;
+  }
+
+  .btn-sm {
+    @apply flex h-8 items-center justify-center whitespace-nowrap rounded px-3 text-xs font-medium duration-300 hover:opacity-95 active:scale-95 disabled:opacity-40 hover:disabled:opacity-40;
+  }
+
+  .btn-square {
+    @apply flex aspect-square w-8 items-center justify-center whitespace-nowrap rounded border font-medium duration-300 hover:opacity-95 active:scale-95 disabled:opacity-40 hover:disabled:opacity-40;
+  }
+
+  .modal {
+    @apply relative w-full max-w-[768px] overflow-hidden text-black;
+  }
+
+  .modal-head {
+    @apply fixed top-0 z-10 flex w-full items-center justify-between border-b bg-black/[0.05] px-6 py-4;
+  }
+
+  .modal-actions {
+    @apply fixed inset-x-0 bottom-0 z-10 flex items-center justify-between border-t bg-black/[0.05] p-4;
+  }
+
+  .modal-body {
+    @apply mb-20 mt-16 h-[calc(100%-140px)] w-full overflow-y-auto overflow-x-hidden p-6;
+  }
+
+  .modal-small {
+    @apply -translate-x-1/2 -translate-y-1/2 rounded-none bg-white drop-shadow-none md:max-w-3xl;
+  }
+
+  .sub-menu {
+    @apply h-full flex-1 overflow-y-hidden border-b border-black/10 bg-black/[0.05] p-1 text-black hover:overflow-y-auto lg:border-b-0 lg:border-r;
+  }
+
+  .vertical-tab {
+    @apply mb-4 flex flex-col lg:mr-4;
+  }
+
+  .accordion {
+    @apply mb-2 rounded-lg border border-black/10 text-black;
+  }
+
+  .accordion-head {
+    @apply flex w-full cursor-pointer items-center justify-between rounded-lg px-6 py-4 text-lg hover:bg-black/[0.05];
+  }
+
+  .accordion-body {
+    @apply rounded-b-lg border-t border-black/10 bg-black/[0.05];
+  }
+
+  .accordion-active {
+    @apply rounded-b-none border-b-0;
+  }
+
+  .wrapper {
+    @apply mx-auto p-4 lg:container md:p-6;
+  }
+
+  .wrapper-tab {
+    @apply mx-auto p-6 text-black lg:flex lg:max-w-7xl;
+  }
+
+  .item-row {
+    @apply mx-6 items-center border-b border-black/10 py-4 text-black last:border-0 md:flex;
+  }
+
+  .item-label {
+    @apply mb-1 mr-2 w-40 min-w-[160px] text-xs opacity-60 md:mb-0;
+  }
+
+  .item-value {
+    @apply text-sm;
+  }
+
+  .text-link {
+    @apply text-primary underline;
+  }
+
+  .warning-message {
+    @apply flex items-center justify-center py-6 text-sm text-black;
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "title": "Dashboard",
+  "table": {
+    "title": "Tablični prikaz",
+    "hour": "Sat",
+    "average": "Prosječna vrijednost",
+    "noData": "Nema dostupnih podataka"
+  }
+}

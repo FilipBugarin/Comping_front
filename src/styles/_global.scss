@@ -1,0 +1,52 @@
+:root {
+  --primary-rgb: 21 38 76;
+  --accent-rgb: 26 162 96;
+  --warn-rgb: 250 210 45;
+  --danger-rgb: 202 23 32;
+  --black-rgb: 0 0 0;
+  --white-rgb: 255 255 255;
+}
+
+:root .dark {
+  --primary-rgb: 66 103 178;
+  --black-rgb: 255 255 255;
+  --white-rgb: 20 25 30;
+}
+
+@font-face {
+  font-family: 'OmoType';
+  src: url('https://eusluge-nav-test.gov.hr/fonts/OmoType-MediumStdTwo.ttf')
+    format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'OmoType';
+  src: url('https://eusluge-nav-test.gov.hr/fonts/OmoType-BoldStdTwo.ttf')
+    format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'OmoType';
+  src: url('https://eusluge-nav-test.gov.hr/fonts/OmoType-BlackStdTwo.ttf')
+    format('woff');
+  font-weight: 800;
+  font-style: normal;
+}
+
+.small {
+  font-size: 0.75rem;
+}
+
+.large {
+  font-size: 1.25rem;
+}
+
+.dyslexia {
+  font-weight: 400;
+
+  *:not(.material-symbols-outlined) {
+    font-family: 'OmoType', sans-serif;
+  }
+}

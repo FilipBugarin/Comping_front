@@ -1,0 +1,203 @@
+@use '@angular/material' as mat;
+@use 'palette';
+@use 'sass:map';
+
+@include mat.core();
+
+$project-primary: mat.define-palette(palette.$md-primary);
+$project-primary-dark: mat.define-palette(palette.$md-primary-dark);
+$project-accent: mat.define-palette(palette.$md-accent);
+$project-warn: mat.define-palette(palette.$md-warn);
+
+$my-typography: mat.define-typography-config();
+
+$project-light-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $project-primary,
+      accent: $project-accent,
+      warn: $project-warn,
+    ),
+  )
+);
+
+$project-dark-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: $project-primary-dark,
+      accent: $project-accent,
+      warn: $project-warn,
+    ),
+  )
+);
+
+@include mat.all-component-themes($project-light-theme);
+
+$typography: mat.define-typography-config(
+  $font-family: 'Inter',
+);
+
+@include mat.all-component-typographies($typography);
+
+.dark {
+  @include mat.all-component-colors($project-dark-theme);
+}
+
+.mat-mdc-form-field.mat-mdc-form-field.mat-mdc-form-field.mat-mdc-form-field.mat-mdc-form-field
+  .mdc-notched-outline__notch {
+  border-right-style: hidden;
+}
+
+table:not(.sticky-table) {
+  border-radius: 0.5rem;
+  background-color: transparent !important;
+  overflow: hidden;
+}
+
+table.sticky-table {
+  background-color: transparent !important;
+}
+
+thead {
+  background-color: rgb(var(--black-rgb) / 0.01) !important;
+}
+
+@media (max-width: 640px) {
+  table:not(.sticky-table) {
+    thead {
+      display: none;
+    }
+
+    td:first-child {
+      padding-top: 1rem !important;
+    }
+
+    td:last-child {
+      padding-bottom: 1rem !important;
+    }
+
+    td {
+      display: flex;
+      flex-direction: column;
+      padding: 0.5rem 1rem !important;
+      border: none !important;
+
+      &:before {
+        content: attr(label-before);
+        font-size: 12px;
+        opacity: 0.6;
+        padding-bottom: 8px;
+      }
+    }
+
+    tr.detail-row {
+      td {
+        padding: 0 !important;
+
+        &:before {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.mat-mdc-paginator {
+  background: transparent;
+}
+
+@media (min-width: 640px) {
+  .mat-column-actions {
+    text-align: center !important;
+    width: 8.5rem;
+
+    div {
+      justify-content: center;
+    }
+  }
+}
+
+.mat-mdc-tab:not(.mat-mdc-tab-disabled) .mdc-tab__text-label,
+.mat-mdc-tab-link:not(.mat-mdc-tab-disabled) .mdc-tab__text-label {
+  font-size: 14px;
+}
+
+.snackbar {
+  &-success {
+    --mat-snack-bar-button-color: rgb(var(--white-rgb));
+    --mdc-snackbar-container-color: rgb(var(--accent-rgb));
+  }
+  &-warn {
+    --mdc-snackbar-supporting-text-color: rgb(var(--black-rgb));
+    --mat-snack-bar-button-color: rgb(var(--black-rgb));
+    --mdc-snackbar-container-color: rgb(var(--warn-rgb));
+  }
+  &-error {
+    --mat-snack-bar-button-color: rgb(var(--white-rgb));
+    --mdc-snackbar-container-color: rgb(var(--warn-rgb));
+  }
+}
+
+.mat-mdc-dialog-container .mdc-dialog__surface {
+  overflow-x: hidden;
+  --mdc-dialog-container-color: rgb(var(--white-rgb));
+}
+
+.mat-mdc-paginator {
+  background-color: transparent !important;
+}
+
+.mat-sort-header-content {
+  text-align: left !important;
+}
+
+.dark .mat-stepper-horizontal,
+.dark .mat-stepper-vertical {
+  background-color: transparent;
+}
+
+.mat-vertical-content {
+  padding: 24px !important;
+}
+
+.mdc-text-field--disabled {
+  background-color: rgb(var(--black-rgb) / 0.05);
+
+  & .mdc-text-field__input,
+  .mat-mdc-select-min-line,
+  .mat-date-range-input-inner[disabled] {
+    color: rgb(var(--black-rgb)) !important;
+    opacity: 0.87;
+  }
+
+  & .mdc-floating-label {
+    color: rgb(var(--black-rgb)) !important;
+    opacity: 0.6;
+  }
+}
+
+.mat-mdc-table .mat-mdc-row:hover,
+.mat-mdc-table .mat-mdc-footer-row:hover {
+  background-color: rgb(var(--white-rgb)) !important;
+}
+
+:root {
+  --mat-paginator-container-text-size: 0.75rem;
+}
+
+.mat-mdc-radio-button {
+  &.mat-accent,
+  &.mat-primary {
+    --mdc-radio-disabled-selected-icon-color: rgb(var(--primary-rgb));
+    --mat-radio-disabled-label-color: rgb(var(--black-rgb));
+    --mdc-radio-disabled-selected-icon-opacity: 1;
+  }
+}
+
+.mat-mdc-menu-panel {
+  --mat-menu-container-color: rgb(var(--white-rgb));
+}
+
+.mat-mdc-select-panel {
+  --mat-select-panel-background-color: rgb(var(--white-rgb));
+}
