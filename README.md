@@ -1,27 +1,88 @@
-# angular-starter
+# Comping - Frontend zadatak
 
-This project was generated with [Angular Starter](https://gitlab/ETK-C-EB/miscellaneous/angular-starter).
+ Aplikacija uključuje dashboard s prikazom karte, liste lokacija, tablični i grafički prikaz podataka, te sekciju s prikazom i detaljima o Pokemonima (dohvat s PokeAPI-ja).
 
-## Development server
+## ✅ Sadržaj aplikacije
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Dashboard**
+  - Prikaz OpenStreetMap karte (Leaflet)
+  - Lista lokacija s markerima
+  - Tablični prikaz agregiranih podataka (`podaci.json`)
+  - Grafički prikaz istih podataka (Chart.js)
+- **Pokemon sekcija**
+  - Dohvat i prikaz podataka s [https://pokeapi.co](https://pokeapi.co)
+  - Paginacija (10 po stranici)
+  - Detalji o Pokemonu u modal prozoru
+- **Transloco** za i18n (postavljen hrvatski jezik)
+- **Angular Material** za stilizaciju komponenti
 
-## Code scaffolding
+---
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## 🚀 Pokretanje aplikacije
 
-## Build
+### 1. Kloniranje repozitorija
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```bash
+git clone https://github.com/FilipBugarin/Comping_front.git
+```
 
-## Running unit tests
+### 2. Instalacija ovisnosti
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Koristiš Angular 17, pa koristiš `npm` v9+:
 
-## Running end-to-end tests
+```bash
+npm install
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Ako koristiš Node 20+, provjeri da nema konflikata s dependency verzijama.
 
-## Further help
+### 3. Pokretanje aplikacije
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```bash
+npm start
+```
+
+ili
+
+```bash
+ng serve
+```
+
+Aplikacija će biti dostupna na `http://localhost:4200/`.
+
+---
+
+## 📂 Struktura projekta
+
+```
+src/
+├── app/
+│   ├── core/              # Zajedničke komponente, servisi, guardovi
+│   ├── modules/
+│   │   ├── dashboard/     # Dashboard moduli i komponente
+│   │   └── pokemon/       # Pokemon moduli i prikaz
+│   ├── assets/
+│   │   └── podaci.json    # Izvor podataka za tablicu i graf
+```
+
+---
+
+## 🛠 Tehnologije
+
+- Angular 17
+- Angular Material
+- Leaflet.js (OpenStreetMap)
+- Chart.js
+- Transloco
+- RxJS / Observables
+- Tailwind CSS
+
+---
+
+## 📌 Napomene
+
+- Aplikacija koristi **soft-deps loading** i lazy-loaded rute
+- Leaflet marker ikone se nalaze u `assets/` (problem s 404 može se riješiti overrideanjem putanje)
+- Projekt je organiziran modularno i pripremljen za proširenje
+
+---
